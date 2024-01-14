@@ -7,6 +7,10 @@ class StorageService{
     Directory directory = await getApplicationDocumentsDirectory();
     return directory.path;
   }
+  static Future<Directory> getDirectory()async{
+    Directory directory = Directory(await _getDirectoryPath());
+    return directory;
+  }
 
   static Future<File> createNewFile(String fileName) async{
     final String directoryPath = await _getDirectoryPath();
